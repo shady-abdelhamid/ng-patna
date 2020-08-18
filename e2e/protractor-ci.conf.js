@@ -1,10 +1,13 @@
 const config = require('./protractor.conf').config;
 
+const puppeteer = require('puppeteer');
+
+
 config.capabilities = {
   browserName: 'chrome',
   chromeOptions: {
     args: ['--headless', '--no-sandbox', '--disable-gpu'],
-    binary: require('puppeteer').executablePath(),
+    binary: puppeteer.executablePath(),
   },
 };
 
