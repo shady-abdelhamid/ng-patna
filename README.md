@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
-https://github.com/shady-abdelhamid/patna-product-mngmnt/workflows/main/badge.svg
+[![build status](https://github.com/shady-abdelhamid/patna-product-mngmnt/workflows/main/badge.svg)](https://github.com/coryrylan/angular-github-actions/actions)
 
 ## Development server
 
