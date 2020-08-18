@@ -1,8 +1,9 @@
 # PatnaProductMngmnt
 
+[![build status](https://github.com/shady-abdelhamid/patna-product-mngmnt/workflows/main/badge.svg)](https://github.com/shady-abdelhamid/patna-product-mngmnt/actions)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
-[![build status](https://github.com/shady-abdelhamid/patna-product-mngmnt/workflows/main/badge.svg)](https://github.com/shady-abdelhamid/patna-product-mngmnt/actions)
 
 ## Development server
 
