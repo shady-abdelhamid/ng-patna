@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 
 
 @NgModule({
   declarations: [
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    StarRatingComponent
   ],
   imports: [
     CommonModule
@@ -14,6 +16,7 @@ import { ConvertToSpacesPipe } from './convert-to-spaces.pipe';
   exports: [
     CommonModule,
     ConvertToSpacesPipe,
+    StarRatingComponent,
   ]
 })
 export class SharedModule { }
