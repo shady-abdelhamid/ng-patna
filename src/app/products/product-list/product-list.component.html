@@ -48,7 +48,7 @@
               />
             </td>
             <td>{{ product.productName | uppercase }}</td>
-            <td>{{ product.productCode | lowercase }}</td>
+            <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
             <td>{{ product.releaseDate }}</td>
             <td>{{ product.price | currency | lowercase}}</td>
             <td>{{ product.rating }}</td>
