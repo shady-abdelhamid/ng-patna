@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../product.model';
 import { ProductService } from '../product.service';
 @Component({
-  selector: 'product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
 })
@@ -13,12 +12,12 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   errorMessage: string;
 
-  _filter: string = '';
+  private filterValue = '';
   get filter(): string {
-    return this._filter;
+    return this.filterValue;
   }
   set filter(value: string) {
-    this._filter = value;
+    this.filterValue = value;
     this.filteredProducts = this.filter
       ? this.performFilter(this.filter)
       : this.products;

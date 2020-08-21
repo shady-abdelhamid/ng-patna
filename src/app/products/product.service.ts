@@ -28,10 +28,10 @@ export class ProductService {
   }
 
   /** error handler  */
-  handleError(res: HttpErrorResponse) {
+  handleError(res: HttpErrorResponse): Observable<any> {
     let errorMsg = '';
 
-    const isServerSideError = res.error! instanceof ErrorEvent;
+    const isServerSideError = !(res.error instanceof ErrorEvent);
 
     errorMsg = isServerSideError
       ? `Server returns code: ${res.status}, error message is: ${res.message}` /* BE related error*/

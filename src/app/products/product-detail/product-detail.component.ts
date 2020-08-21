@@ -4,7 +4,6 @@ import { ProductService } from '../product.service';
 import { Product } from '../product.model';
 
 @Component({
-  selector: 'product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss']
 })

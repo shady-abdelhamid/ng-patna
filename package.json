@@ -1,6 +1,7 @@
 {
-  "name": "patna-product-mngmnt",
+  "name": "patna",
   "version": "0.0.0",
+  "description": "patna product management",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
