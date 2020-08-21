@@ -1,7 +1,8 @@
-<div class='card'
+<div class='card mt-3'
      *ngIf='product'>
   <div class='card-header'>
-    {{pageTitle + ': ' + product.productName}}
+    <span>Product detail:</span>
+    {{ product.productName}}
   </div>
 
   <div class='card-body'>
