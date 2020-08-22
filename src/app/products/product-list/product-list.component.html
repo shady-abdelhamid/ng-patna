@@ -1,8 +1,6 @@
-<div class="card">
+<div class="card mt-3">
   <div class="card-header">
     Product List
-    <!-- <h4 class="card-title">Title</h4>
-    <h6 class="card-subtitle text-muted">Subtitle</h6> -->
   </div>
   <div class="card-body">
     <div class="row">
@@ -10,41 +8,59 @@
         Filter By:
       </div>
       <div class="col-md-4">
-        <input type="text" />
+        <input type="text" [(ngModel)]="filter" />
       </div>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>
-                <button type="button" class="btn btn-primary">
-                  Show Image
-                </button>
-              </th>
-              <th>Product</th>
-              <th>Code</th>
-              <th>Available</th>
-              <th>Price</th>
-              <th>Rating</th>
-
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table *ngIf="products?.length" class="table">
+        <thead>
+          <tr>
+            <th>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="toggleImage()"
+              >
+                {{ showImage ? "Hide" : "Show" }} Image
+              </button>
+            </th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of filteredProducts">
+            <td scope="row">
+              <img
+                *ngIf="showImage"
+                [src]="product.imageUrl"
+                [title]="product.productName"
+                [style.width.px]="50"
+                [style.margin.px]="2"
+              />
+            </td>
+            <td>
+              <a [routerLink]="['/products', product.productId]">
+                {{ product.productName }}
+              </a>
+            </td>
+            <td>{{ product.productCode | lowercase | convertToSpaces: '-' }}</td>
+            <td>{{ product.releaseDate }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>
+              <app-star-rating [rating]= product.rating></app-star-rating>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'
+>
+  Error: {{ errorMessage }}
 </div>
