@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
   { path: 'products', loadChildren: () => import('./products/products.module').then((m) => m.ProductsModule)},
+  { path: 'user-settings', loadChildren: () => import('./user-settings/user-settings.module').then(m => m.UserSettingsModule) },
   { path: '**', component: PageNotFoundComponent }
 
 ];
