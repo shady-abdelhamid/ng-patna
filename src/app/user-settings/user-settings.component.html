@@ -1,11 +1,12 @@
+
 <div class="card mt-3">
   <div class="card-body">
     <h4 class="card-title">User Settings</h4>
-    <form>
+    <form #form="ngForm">
       <!-- Name Starts -->
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" placeholder="Name" />
+        <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" />
       </div>
       <!-- Name Ends -->
 
@@ -15,10 +16,10 @@
           <input
             type="checkbox"
             class="form-check-input"
-            name=""
-            id=""
+            name="emailOffers"
+            id="emailOffers"
             value="checkedValue"
-            checked
+            [(ngModel)]="userSettings.emailOffers"
           />
           Email Special Offers
         </label>
@@ -37,6 +38,7 @@
               id="lightInterface"
               value="light"
               checked
+              [(ngModel)]="userSettings.interfaceStyle"
             />
             Light
           </label>
@@ -49,6 +51,7 @@
               name="interface"
               id="mediumInterface"
               value="medium"
+              [(ngModel)]="userSettings.interfaceStyle"
             />
             Medium
           </label>
@@ -61,6 +64,7 @@
               name="interface"
               id="darkInterface"
               value="dark"
+              [(ngModel)]="userSettings.interfaceStyle"
             />
             Dark
           </label>
@@ -75,6 +79,7 @@
           class="form-control"
           name="subscriptionType"
           id="subscriptionType"
+          [(ngModel)]="userSettings.subscriptionType"
         >
           <option>Monthly</option>
           <option>Annualy</option>
@@ -91,6 +96,7 @@
           name="notes"
           id="notes"
           rows="3"
+          [(ngModel)]="userSettings.notes"
         ></textarea>
       </div>
       <!-- Notes Ends -->
@@ -104,6 +110,7 @@
           name="password"
           id="password"
           placeholder="confirm with password"
+          [(ngModel)]="userSettings.password"
         />
       </div>
       <!-- Password Ends -->
@@ -112,3 +119,4 @@
     </form>
   </div>
 </div>
+{{ userSettings | json }}
