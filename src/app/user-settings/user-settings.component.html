@@ -1,12 +1,26 @@
-
 <div class="card mt-3">
   <div class="card-body">
     <h4 class="card-title">User Settings</h4>
-    <form #form="ngForm">
+
+    <form #form="ngForm" (ngSubmit)=onSubmit(form)>
       <!-- Name Starts -->
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" />
+        <input
+          type="text"
+          name="name"
+          class="form-control"
+          placeholder="Name"
+          [(ngModel)]="userSettings.name"
+          required
+          #nameField="ngModel"
+          [class.field-error]="form.submitted && nameField.invalid"
+        />
+        <div [hidden]="!form.submitted || nameField.valid"
+          class="alert alert-danger"
+        >
+          Enter a name
+        </div>
       </div>
       <!-- Name Ends -->
 

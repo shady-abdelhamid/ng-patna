@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserSettings } from './user-settings';
 import { SubscriptionType } from './subscription-type.enum';
 import { InterfaceStyle } from './interface-style.enum';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-user-settings',
   templateUrl: './user-settings.component.html',
@@ -10,12 +11,12 @@ import { InterfaceStyle } from './interface-style.enum';
 export class UserSettingsComponent implements OnInit {
 
   originalUserSettings: UserSettings = {
-    name: 'Adam',
-    emailOffers: true,
-    interfaceStyle: InterfaceStyle.dark,
-    subscriptionType: SubscriptionType.Annualy,
-    notes: 'Here are some notes...',
-    password: 'secret123'
+    name: null,
+    emailOffers: null,
+    interfaceStyle: null,
+    subscriptionType: null,
+    notes: null,
+    password: null,
   };
 
   userSettings: UserSettings = {...this.originalUserSettings};
@@ -23,6 +24,10 @@ export class UserSettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm): void {
+
   }
 
 }
