@@ -2,7 +2,7 @@
   <div class="card-body">
     <h4 class="card-title">User Settings</h4>
 
-    <form #form="ngForm" (ngSubmit)=onSubmit(form)>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
       <!-- Name Starts -->
       <div class="form-group">
         <label for="name">Name</label>
@@ -16,7 +16,8 @@
           #nameField="ngModel"
           [class.field-error]="form.submitted && nameField.invalid"
         />
-        <div [hidden]="!form.submitted || nameField.valid"
+        <div
+          [hidden]="!form.submitted || nameField.valid"
           class="alert alert-danger"
         >
           Enter a name
@@ -95,9 +96,9 @@
           id="subscriptionType"
           [(ngModel)]="userSettings.subscriptionType"
         >
-          <option>Monthly</option>
-          <option>Annualy</option>
-          <option>Lifetime</option>
+          <option *ngFor="let type of subscriptionTypes$ | async">
+            {{ type }}
+          </option>
         </select>
       </div>
       <!-- Subscription Type Ends -->

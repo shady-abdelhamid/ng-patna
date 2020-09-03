@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { UserSettingsRoutingModule } from './user-settings-routing.module';
 import { UserSettingsComponent } from './user-settings.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { UserSettingsComponent } from './user-settings.component';
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     UserSettingsRoutingModule
   ]
 })
