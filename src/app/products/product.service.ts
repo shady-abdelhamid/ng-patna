@@ -21,10 +21,19 @@ export class ProductService {
 
   /** get product by id */
   getProduct(id: number): Observable<Product | undefined> {
-    return this.getProducts()
-      .pipe(
-        map((products: Product[]) => products.find(p => p.productId === id))
-      );
+    return this.getProducts().pipe(
+      map((products: Product[]) => products.find((p) => p.id === id))
+    );
+  }
+
+  createProduct(product: Product): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
+  updateProduct(product: Product): Observable<any> {
+    throw new Error('Method not implemented.');
+  }
+  deleteProduct(id: number): Observable<any> {
+    throw new Error('Method not implemented.');
   }
 
   /** error handler  */
