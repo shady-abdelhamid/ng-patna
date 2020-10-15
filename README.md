@@ -1,6 +1,6 @@
-[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/shady-abdelhamid/ng-patna)
-
 # PatnaProductMngmnt
+
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/shady-abdelhamid/ng-patna)
 
 [![build status](https://github.com/shady-abdelhamid/patna-product-mngmnt/workflows/CI/badge.svg)](https://github.com/shady-abdelhamid/patna-product-mngmnt/actions)
 
